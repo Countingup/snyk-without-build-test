@@ -1,6 +1,6 @@
 module github.com/Countingup/snyk-test
 
-go 1.15
+go 1.16
 
 require (
 	github.com/go-openapi/loads v0.20.2
