@@ -1,0 +1,31 @@
+# swagger generate server -f ./swagger.yml --exclude-main
+
+swagger: "2.0"
+info:
+  description: Demo service that returns a greeting
+  title: Hello Swagger
+  version: "0.1"
+schemes:
+  - http
+produces:
+  - text/plain
+
+paths:
+  /:
+    # /{name}:
+    get:
+      operationId: getGreeting
+      summary: Returns a personalised greeting
+      parameters:
+        - in: query # path
+          name: name
+          type: string
+          description: Name to be greeted, defaults to World if not given
+          required: true
+      responses:
+        200:
+          description: returns a personalised greeting
+          schema:
+            type: string
+            description: contains the actual greeting as plain text
+            example: "Hello World!"
